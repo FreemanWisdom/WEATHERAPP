@@ -47,34 +47,34 @@ const DailyForecast = () => {
 
     return (
         <div className="space-y-4">
-            <div className="flex items-center gap-2">
-                <CalendarDays className="w-5 h-5 text-gray-500" />
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">5-Day Forecast</h3>
+            <div className="flex items-center gap-2 px-1">
+                <CalendarDays className="w-5 h-5 text-blue-500" />
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100">5-Day Forecast</h3>
             </div>
-            <div className="bg-white/40 dark:bg-dark-card/30 backdrop-blur-md rounded-3xl p-4 md:p-6 shadow-soft dark:shadow-none border border-white/20 dark:border-white/5">
-                <div className="divide-y divide-gray-100 dark:divide-gray-800">
+            <div className="bg-white/40 dark:bg-dark-card/30 backdrop-blur-lg rounded-3xl p-5 md:p-8 shadow-soft dark:shadow-none border border-white/20 dark:border-white/5">
+                <div className="divide-y divide-gray-100/30 dark:divide-white/5">
                     {dailyData.map((item) => (
                         <div key={item.dt} className="flex items-center justify-between py-4 first:pt-0 last:pb-0">
-                            <p className="w-24 font-medium text-gray-600 dark:text-gray-300">
-                                {formatDate(item.dt)}
+                            <p className="w-16 md:w-24 font-bold text-gray-700 dark:text-gray-200 text-sm md:text-base">
+                                {formatDate(item.dt).split(',')[0]}
                             </p>
 
                             <div className="flex items-center gap-2 flex-1 justify-center">
                                 <img
-                                    src={`https://openweathermap.org/img/wn/${item.weather.icon}.png`}
+                                    src={`https://openweathermap.org/img/wn/${item.weather.icon}@2x.png`}
                                     alt={item.weather.description}
-                                    className="w-10 h-10"
+                                    className="w-10 h-10 md:w-12 md:h-12 drop-shadow-sm"
                                 />
-                                <span className="text-sm text-gray-400 capitalize hidden sm:block">
+                                <span className="text-sm text-gray-400 dark:text-gray-500 capitalize hidden md:block">
                                     {item.weather.description}
                                 </span>
                             </div>
 
-                            <div className="flex gap-4 w-24 justify-end">
-                                <span className="font-bold text-gray-800 dark:text-gray-100">
+                            <div className="flex gap-4 w-20 md:w-24 justify-end">
+                                <span className="font-bold text-gray-800 dark:text-gray-100 text-base md:text-lg">
                                     {Math.round(item.max)}°
                                 </span>
-                                <span className="text-gray-400 font-medium">
+                                <span className="text-gray-400 dark:text-gray-500 font-medium text-base md:text-lg">
                                     {Math.round(item.min)}°
                                 </span>
                             </div>

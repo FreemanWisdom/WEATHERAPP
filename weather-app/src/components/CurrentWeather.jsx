@@ -14,19 +14,19 @@ const CurrentWeather = () => {
 
     return (
         <div className="bg-white/40 dark:bg-dark-card/30 backdrop-blur-md rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-soft dark:shadow-none border border-white/20 dark:border-white/5 transition-all hover:-translate-y-1 hover:shadow-soft-lg duration-500">
-            <div className="space-y-2 text-center md:text-left">
-                <div className="flex items-center gap-2 justify-center md:justify-start">
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{locationName || weather.name}</h2>
+            <div className="space-y-4 text-center md:text-left">
+                <div className="flex items-center gap-3 justify-center md:justify-start">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-800 dark:text-white">{locationName || weather.name}</h2>
                     <RefreshButton />
                 </div>
                 <p className="text-gray-500 dark:text-gray-400 font-medium tracking-wide">
                     {formatDate(dt)}
                 </p>
                 <div className="flex flex-col">
-                    <span className="text-6xl md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-br from-gray-900 to-gray-500 dark:from-white dark:to-gray-500">
+                    <span className="text-7xl md:text-9xl font-black bg-clip-text text-transparent bg-gradient-to-br from-gray-900 to-gray-500 dark:from-white dark:to-gray-500 leading-none">
                         {Math.round(main.temp)}°
                     </span>
-                    <p className="text-xl text-gray-600 dark:text-gray-300 font-medium capitalize mt-[-8px]">
+                    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium capitalize mt-1">
                         {current.description}
                     </p>
                 </div>

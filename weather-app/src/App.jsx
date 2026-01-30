@@ -18,8 +18,8 @@ function App() {
   const bgClass = getWeatherBackground(weatherId, isDark);
 
   return (
-    <div className={`min-h-screen ${bgClass} text-gray-900 dark:text-dark-text transition-all duration-700 font-sans p-4 md:p-8`}>
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className={`min-h-screen ${bgClass} text-gray-900 dark:text-dark-text transition-all duration-700 font-sans px-4 py-6 md:px-8 md:py-10`}>
+      <div className="max-w-4xl mx-auto space-y-8">
         <Header />
 
         <SearchBar />
